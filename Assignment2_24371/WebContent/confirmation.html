@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: green;">Confirmation Email Sent</h1>
+
+        <div class="confirmation-message">
+            <p>An email confirmation has been sent to:</p><br>
+            <p id="student-email" style="color: green;">
+                <%-- Retrieve the user's email from the session and display it --%>
+                <%= session.getAttribute("userEmail") %>
+            </p>
+        </div>
+        <form action="logout">
+            <div class="input-group input-group-lg">
+                <button class="btn btn-lg btn-primary btn-block" type="button" onclick="logout()">Logout</button>
+            </div>
+        </form>
+    </div>
+    
+    <script>
+        function logout() {
+            
+            // Redirect the user to the logout URL
+            window.location.href = "logout";
+        }
+    </script>
+</body>
+</html>
